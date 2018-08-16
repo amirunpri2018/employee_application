@@ -1,0 +1,970 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is api documentation for swagger exercise",
+    "version": "0.0.2",
+    "title": "Swagger API Test",
+    "contact": {
+      "email": "prasad01dalavi@gmail.com"
+    }
+  },
+  "host": "localhost:5000",
+  "basePath": "/",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "paths": {
+    "/signup": {
+      "post": {
+        "tags": [
+          "Anonymous"
+        ],
+        "summary": "api 1",
+        "description": "",
+        "operationId": "opid1",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "sign_up",
+            "description": "Sign Up!.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mer": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "mobile": {
+                  "type": "string"
+                },
+                "country": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "address": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                },
+                "device": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success!",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "uid": {
+                      "type": "string"
+                    },
+                    "cur": {
+                      "type": "string"
+                    },
+                    "otp": {
+                      "type": "string"
+                    },
+                    "reason": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Failed!"
+          }
+        }
+      }
+    },
+    "/signin": {
+      "post": {
+        "tags": [
+          "Anonymous"
+        ],
+        "summary": "api 2",
+        "description": "Log In",
+        "operationId": "opid2",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "sign_in",
+            "description": "Sign In!.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success!",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "user_type": {
+                      "type": "string"
+                    },
+                    "mobile": {
+                      "type": "string"
+                    },
+                    "uid": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "reason": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Failed!"
+          }
+        }
+      }
+    },
+    "/wallet_up": {
+      "post": {
+        "tags": [
+          "Anonymous"
+        ],
+        "summary": "api 3",
+        "description": "",
+        "operationId": "opid3",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "sign_up",
+            "description": "Sign Up!.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "uid": {
+                  "type": "string"
+                },
+                "mer": {
+                  "type": "string"
+                },
+                "cur": {
+                  "type": "string"
+                },
+                "acc_dtl": {
+                  "type": "string"
+                },
+                "acc_no": {
+                  "type": "string"
+                },
+                "bank": {
+                  "type": "string"
+                },
+                "code": {
+                  "type": "string"
+                },
+                "acc_name": {
+                  "type": "string"
+                },
+                "device": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success!",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "reason": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Failed!"
+          }
+        }
+      }
+    },
+    "/forget_pass": {
+      "post": {
+        "tags": [
+          "Anonymous"
+        ],
+        "summary": "api 4",
+        "description": "",
+        "operationId": "opid4",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "forget_password",
+            "description": "Forget Password?.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mobile": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success!",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "otp": {
+                      "type": "string"
+                    },
+                    "reason": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Failed!"
+          }
+        }
+      }
+    },
+    "/update_pass": {
+      "post": {
+        "tags": [
+          "Anonymous"
+        ],
+        "summary": "api 5",
+        "description": "",
+        "operationId": "opid5",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "update_pass",
+            "description": "Update Password.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mobile": {
+                  "type": "string"
+                },
+                "otp": {
+                  "type": "string"
+                },
+                "pass": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success!",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "reason": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Failed!"
+          }
+        }
+      }
+    },
+    "/get_qr": {
+      "post": {
+        "tags": [
+          "Anonymous"
+        ],
+        "summary": "api 6",
+        "description": "",
+        "operationId": "opid6",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "get_qr",
+            "description": "get qr.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "uid": {
+                  "type": "string"
+                },
+                "mer": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "will send file named qr.jpg",
+            "content": {
+              "image/jpg": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Failed!"
+          }
+        }
+      }
+    },
+    "/read_qr": {
+      "post": {
+        "tags": [
+          "Anonymous"
+        ],
+        "summary": "api 7",
+        "description": "",
+        "operationId": "opid7",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "read_qr",
+            "description": "read qr",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "qr": {
+                  "type": "string"
+                },
+                "mobile": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success!",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "mobile": {
+                      "type": "string"
+                    },
+                    "uid": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Failed!"
+          }
+        }
+      }
+    },
+    "/get_detail": {
+      "post": {
+        "tags": [
+          "Anonymous"
+        ],
+        "summary": "api 8",
+        "description": "",
+        "operationId": "opid8",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "get_detail",
+            "description": "get detail",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success!",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "mobile": {
+                      "type": "string"
+                    },
+                    "uid": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Failed!"
+          }
+        }
+      }
+    },
+    "/train": {
+      "post": {
+        "tags": [
+          "Anonymous"
+        ],
+        "summary": "api 9",
+        "description": "",
+        "operationId": "opid9",
+        "consumes": [
+          "application/json"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "uid": {
+                    "type": "string"
+                  },
+                  "mer": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success!",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "reason": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Failed!"
+          }
+        }
+      }
+    },
+    "/train_pass": {
+      "post": {
+        "tags": [
+          "Anonymous"
+        ],
+        "summary": "api 10",
+        "description": "",
+        "operationId": "opid10",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "train pass",
+            "description": "train pass",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "uid": {
+                  "type": "string"
+                },
+                "tpass": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success!",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "reason": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Failed!"
+          }
+        }
+      }
+    },
+    "/otp_auth": {
+      "post": {
+        "tags": [
+          "Anonymous"
+        ],
+        "summary": "api 11",
+        "description": "",
+        "operationId": "opid11",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "otp_auth",
+            "description": "otp auth",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "uid": {
+                  "type": "string"
+                },
+                "otp": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success!",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "reason": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Failed!"
+          }
+        }
+      }
+    },
+    "/detect": {
+      "post": {
+        "tags": [
+          "Anonymous"
+        ],
+        "summary": "api 12",
+        "description": "",
+        "operationId": "opid12",
+        "consumes": [
+          "application/json"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success!",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "mobile": {
+                      "type": "string"
+                    },
+                    "uid": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Failed!"
+          }
+        }
+      }
+    },
+    "/wallet_bal": {
+      "post": {
+        "tags": [
+          "Anonymous"
+        ],
+        "summary": "api 13",
+        "description": "",
+        "operationId": "opid13",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "otp_auth",
+            "description": "otp auth",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "uid": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success!",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "reason": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Failed!"
+          }
+        }
+      }
+    },
+    "/auth": {
+      "post": {
+        "tags": [
+          "Anonymous"
+        ],
+        "summary": "api 14",
+        "description": "",
+        "operationId": "opid14",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "auth",
+            "description": "auth",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "uid": {
+                  "type": "string"
+                },
+                "tpass": {
+                  "type": "string"
+                },
+                "file": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success!",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "reason": {
+                      "type": "string"
+                    },
+                    "auth_code": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Failed!"
+          }
+        }
+      }
+    },
+    "/money_transfer": {
+      "post": {
+        "tags": [
+          "Anonymous"
+        ],
+        "summary": "api 15",
+        "description": "",
+        "operationId": "opid15",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "money_transfer",
+            "description": "money transfer",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "fuid": {
+                  "type": "string"
+                },
+                "tuid": {
+                  "type": "string"
+                },
+                "amt": {
+                  "type": "string"
+                },
+                "auth_code": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success!",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "reason": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Failed!"
+          }
+        }
+      }
+    },
+    "/fauth": {
+      "post": {
+        "tags": [
+          "Anonymous"
+        ],
+        "summary": "api 16",
+        "description": "",
+        "operationId": "opid16",
+        "consumes": [
+          "application/json"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success!",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "reason": {
+                      "type": "string"
+                    },
+                    "auth_code": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Failed!"
+          }
+        }
+      }
+    },
+    "/recent": {
+      "post": {
+        "tags": [
+          "Anonymous"
+        ],
+        "summary": "api 17",
+        "description": "",
+        "operationId": "opid17",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "money_transfer",
+            "description": "money transfer",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "uid": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success!",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "reason": {
+                      "type": "string"
+                    },
+                    "rl": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Failed!"
+          }
+        }
+      }
+    }
+  }
+}
