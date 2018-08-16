@@ -1,0 +1,188 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This api documentation is for Employee app.",
+    "version": "0.0.2",
+    "title": "Employee Application",
+    "contact": {
+      "email": "prasad01dalavi@gmail.com"
+    }
+  },
+  "host": "localhost:5000",
+  "basePath": "/",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "tags": [
+          "Employees"
+        ],
+        "summary": "Get all employees details",
+        "description": "This api gives all employees details",
+        "operationId": "getEmployee",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success!"
+          },
+          "405": {
+            "description": "Error!"
+          }
+        }
+      }
+    },
+    "/add": {
+      "post": {
+        "tags": [
+          "Employees"
+        ],
+        "summary": "Add new employee details",
+        "description": "This api will add new employee details",
+        "operationId": "addEmployee",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "add_employee",
+            "description": "The new employee to create.",
+            "schema": {
+              "type": "object",
+              "required": [
+                "name",
+                "designation",
+                "mobile_number",
+                "email_id"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "designation": {
+                  "type": "string"
+                },
+                "mobile_number": {
+                  "type": "string"
+                },
+                "email_id": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Created!"
+          },
+          "405": {
+            "description": "Error!"
+          }
+        }
+      }
+    },
+    "/update": {
+      "post": {
+        "tags": [
+          "Employees"
+        ],
+        "summary": "Updates existing employee details.",
+        "description": "This api will update employee details",
+        "operationId": "updateEmployee",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "update_employee",
+            "description": "Employee Details to update.",
+            "schema": {
+              "type": "object",
+              "required": [
+                "id",
+                "name",
+                "designation",
+                "mobile_number",
+                "emali_id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "designation": {
+                  "type": "string"
+                },
+                "mobile_number": {
+                  "type": "string"
+                },
+                "email_id": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Updated!"
+          },
+          "405": {
+            "description": "Error!"
+          }
+        }
+      }
+    },
+    "/delete": {
+      "post": {
+        "tags": [
+          "Employees"
+        ],
+        "summary": "Delete employee record.",
+        "description": "This api will delete the employees record",
+        "operationId": "deleteEmployee",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "delete_employee",
+            "description": "Employee id to delete.",
+            "schema": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Deleted!"
+          },
+          "405": {
+            "description": "Error!"
+          }
+        }
+      }
+    }
+  }
+}

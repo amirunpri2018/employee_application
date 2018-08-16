@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Edit Employee</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='css/sign.css') }}" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <form class="form-signin" method="post" action="/update?id={{ id }}">  
+        <h2 class="form-signin-heading">Update Employee Details</h2>
+        <div class="form-group">
+          <label for="inputName" class="sr-only">Name</label>
+          <input type="text" id="inputName" name="name" class="form-control" placeholder="{{ name }}" required autofocus>
+        </div>
+
+        <div class="form-group">
+          <label for="inputName" class="sr-only">Designation</label>
+          <input type="text" id="inputName" name="designation" class="form-control" placeholder="{{ designation }}" required autofocus>
+        </div>
+
+        <div class="form-group">
+          <label for="inputName" class="sr-only">Mobile Number</label>
+          <input type="text" id="inputName" name="mobile_number" class="form-control" placeholder="{{ mobile_number }}" required autofocus>
+        </div>
+
+        <div class="form-group">
+          <label for="inputName" class="sr-only">Email ID</label>
+          <input type="text" id="inputName" name="email_id" class="form-control" placeholder="{{ email_id }}" required autofocus>
+        </div>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Update</button>
+      </form>
+
+      <form class="form-signin" method="post" action="/delete?id={{ id }}">
+        <button class="btn btn-lg btn-danger btn-block" type="submit">Delete</button>
+      </form>
+
+    </div> 
+      
+  </body>
+</html>
